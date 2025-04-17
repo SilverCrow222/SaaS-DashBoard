@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# SaaS-DashBoard
+A modern, responsive SaaS-style dashboard built with React. Includes a sidebar, top navigation, and reusable components to display stats, charts, and user activity. Designed to showcase frontend development skills including layout, state management, and clean component architecture.
+>>>>>>> 9940de906da8ffc1746f5461b1bc37df1fbf2dee
