@@ -33,8 +33,10 @@ function Dashboard({ isCollapsed }) {
       </div>
       <div className="chart">
         <h3 className="chartText">User Growth</h3>
-        <img src="Excel-charts-11.png" alt="Chart placeholder" />
-        <img src="Excel-charts-11.png" alt="Chart placeholder" />
+        <div className="img">
+          <img src="Excel-charts-11.png" alt="Chart placeholder" />
+          <img src="Excel-charts-11.png" alt="Chart placeholder" />
+        </div>
       </div>
       <div className="recent">
         <h3>Recent Activity</h3>
