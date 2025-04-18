@@ -1,23 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import SideBar from "./components/SideBar";
+import TopBar from "./components/TopBar";
+import Content from "./components/Content";
+
+import "./App.css";
 
 function App() {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [activePage, setActivePage] = useState("Dashboard");
+  const [openPopup, setOpenPopup] = useState(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const enableDarkMode = () => setIsDarkMode(true);
+  const enableLightMode = () => setIsDarkMode(false);
+
+  const togglePopup = (type) => {
+    setOpenPopup((prev) => (prev === type ? null : type));
+  };
+
+  function handleClick() {
+    setIsCollapsed((prev) => !prev);
+  }
+
+  function handleSideBarClick(page) {
+    setActivePage(page);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`app ${isDarkMode ? "dark" : ""}`}>
+      <SideBar
+        isCollapsed={isCollapsed}
+        handleClick={handleClick}
+        activePage={activePage}
+        handleSideBarClick={handleSideBarClick}
+        openPopup={openPopup}
+        togglePopup={togglePopup}
+      />
+      <TopBar
+        isCollapsed={isCollapsed}
+        activePage={activePage}
+        setActivePage={setActivePage}
+        openPopup={openPopup}
+        togglePopup={togglePopup}
+        setOpenPopup={setOpenPopup}
+        toggleDarkMode={() => setIsDarkMode((prev) => !prev)}
+      />
+      <Content
+        isCollapsed={isCollapsed}
+        activePage={activePage}
+        openPopup={openPopup}
+        togglePopup={togglePopup}
+        enableDarkMode={enableDarkMode}
+        enableLightMode={enableLightMode}
+      />
     </div>
   );
 }
